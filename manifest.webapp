@@ -1,0 +1,213 @@
+{
+  "name": "Collect",
+  "name_prefix": "Cozy",
+  "slug": "collect",
+  "icon": "cozy_collect.svg",
+  "categories": [
+    "cozy",
+    "konnectors"
+  ],
+  "type": "webapp",
+  "source": "git://github.com/cozy/cozy-collect.git",
+  "editor": "Cozy",
+  "developer": {
+    "name": "Cozy Cloud",
+    "url": "https://cozy.io"
+  },
+  "version": "2.0.3",
+  "licence": "AGPL-3.0",
+  "screenshots": [
+    "screenshots/screenshot1.png",
+    "screenshots/screenshot2.png",
+    "screenshots/screenshot3.png"
+  ],
+  "permissions": {
+    "apps": {
+      "description": "Required by the cozy-bar to display the icons of the apps",
+      "type": "io.cozy.apps",
+      "verbs": [
+        "GET",
+        "POST",
+        "PUT"
+      ]
+    },
+    "settings": {
+      "description": "Required by the cozy-bar display Claudy and to know which applications are coming soon",
+      "type": "io.cozy.settings",
+      "verbs": [
+        "GET"
+      ]
+    },
+    "konnectors": {
+      "description": "Required to get the list of konnectors",
+      "type": "io.cozy.konnectors",
+      "verbs": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ]
+    },
+    "konnectors results": {
+      "description": "Required to get the list of konnectors results",
+      "type": "io.cozy.konnectors.result",
+      "verbs": [
+        "GET"
+      ]
+    },
+    "accounts": {
+      "description": "Required to manage accounts associated to konnectors",
+      "type": "io.cozy.accounts",
+      "verbs": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ]
+    },
+    "files": {
+      "description": "Required to access folders",
+      "type": "io.cozy.files",
+      "verbs": [
+        "GET",
+        "PATCH",
+        "POST"
+      ]
+    },
+    "jobs": {
+      "description": "Required to run the konnectors",
+      "type": "io.cozy.jobs",
+      "verbs": [
+        "ALL"
+      ]
+    },
+    "triggers": {
+      "description": "Required to run the konnectors",
+      "type": "io.cozy.triggers"
+    },
+    "permissions": {
+      "description": "Required to run the konnectors",
+      "verbs": [
+        "ALL"
+      ],
+      "type": "io.cozy.permissions"
+    }
+  },
+  "routes": {
+    "/": {
+      "folder": "/",
+      "index": "index.html",
+      "public": false
+    },
+    "/intro": {
+      "folder": "/",
+      "index": "index.html",
+      "public": false
+    },
+    "/intents": {
+      "folder": "/intents",
+      "index": "index.html",
+      "public": false
+    }
+  },
+  "intents": [
+    {
+      "action": "CREATE",
+      "type": [
+        "io.cozy.accounts"
+      ],
+      "href": "/intents"
+    },
+    {
+      "action": "REDIRECT",
+      "type": [
+        "io.cozy.accounts"
+      ],
+      "href": "/#/redirect",
+      "data": [
+        "konnector"
+      ]
+    }
+  ],
+  "services": {
+    "clean-orphan-accounts": {
+      "type": "node",
+      "file": "/services/cleanOrphanAccounts.js",
+      "trigger": "@cron 0 0 * * * *"
+    }
+  },
+  "locales": {
+    "de": {
+      "name": "Collect",
+      "short_description": "Cozy Collect is the application that help you gather all your personal data inside Cozy.",
+      "long_description": "With Cozy Collect, you can easily:\n * Downloads documents from all your suppliers\n * Set how often Cozy will collect your bills\n * Access directly to the documents gathered by your Cozy",
+      "changes": "You haven't missed it, the Store arrived in your Cozy!\nWe took advantage of it to improve Collect:\n * Store adaptation.\n * Tile merge: when you have several accounts for a single supplier, the former are now merged under the supplier tile.\n * Improvement of some Connectors pages."
+    },
+    "de_DE": {
+      "name": "Collect",
+      "short_description": "Cozy Collect is the application that help you gather all your personal data inside Cozy.",
+      "long_description": "With Cozy Collect, you can easily:\n * Downloads documents from all your suppliers\n * Set how often Cozy will collect your bills\n * Access directly to the documents gathered by your Cozy",
+      "changes": "You haven't missed it, the Store arrived in your Cozy!\nWe took advantage of it to improve Collect:\n * Store adaptation.\n * Tile merge: when you have several accounts for a single supplier, the former are now merged under the supplier tile.\n * Improvement of some Connectors pages."
+    },
+    "en": {
+      "name": "Collect",
+      "short_description": "Cozy Collect is the application that help you gather all your personal data inside Cozy.",
+      "long_description": "With Cozy Collect, you can easily:\n * Downloads documents from all your suppliers\n * Set how often Cozy will collect your bills\n * Access directly to the documents gathered by your Cozy",
+      "changes": "You haven't missed it, the Store arrived in your Cozy!\nWe took advantage of it to improve Collect:\n * Store adaptation.\n * Tile merge: when you have several accounts for a single supplier, the former are now merged under the supplier tile.\n * Improvement of some Connectors pages."
+    },
+    "es": {
+      "name": "Recopilar",
+      "short_description": "Cozy Collect is the application that help you gather all your personal data inside Cozy.",
+      "long_description": "With Cozy Collect, you can easily:\n * Downloads documents from all your suppliers\n * Set how often Cozy will collect your bills\n * Access directly to the documents gathered by your Cozy",
+      "changes": "You haven't missed it, the Store arrived in your Cozy!\nWe took advantage of it to improve Collect:\n * Store adaptation.\n * Tile merge: when you have several accounts for a single supplier, the former are now merged under the supplier tile.\n * Improvement of some Connectors pages."
+    },
+    "fr": {
+      "name": "Collect",
+      "short_description": "Cozy Collect est l'application de récupération de vos données personnelles disponible sur Cozy.",
+      "long_description": "Avec Cozy Collect, vous pouvez facilement :\n\n * Télécharger les documents de tous vos fournisseurs\n * Configurer la fréquence à laquelle Cozy va récupérer vos factures\n * Accéder directement aux documents récupérés par votre Cozy",
+      "changes": "Cela ne vous aura pas échappé, le Store est arrivé dans Cozy !\nNous en avons profité pour améliorer Collect :\n\n * Adaptation au Store.\n * Fusion des tuiles : lorsque vous avez plusieurs comptes pour un même fournisseur ces derniers sont désormais réunis sous la tuile de ce fournisseur.\n * Amélioration des pages des connecteurs."
+    },
+    "ja": {
+      "name": "Collect",
+      "short_description": "Cozy Collect is the application that help you gather all your personal data inside Cozy.",
+      "long_description": "With Cozy Collect, you can easily:\n * Downloads documents from all your suppliers\n * Set how often Cozy will collect your bills\n * Access directly to the documents gathered by your Cozy",
+      "changes": "You haven't missed it, the Store arrived in your Cozy!\nWe took advantage of it to improve Collect:\n * Store adaptation.\n * Tile merge: when you have several accounts for a single supplier, the former are now merged under the supplier tile.\n * Improvement of some Connectors pages."
+    },
+    "nl": {
+      "name": "Collect",
+      "short_description": "Cozy Collect is the application that help you gather all your personal data inside Cozy.",
+      "long_description": "With Cozy Collect, you can easily:\n * Downloads documents from all your suppliers\n * Set how often Cozy will collect your bills\n * Access directly to the documents gathered by your Cozy",
+      "changes": "You haven't missed it, the Store arrived in your Cozy!\nWe took advantage of it to improve Collect:\n * Store adaptation.\n * Tile merge: when you have several accounts for a single supplier, the former are now merged under the supplier tile.\n * Improvement of some Connectors pages."
+    },
+    "pl": {
+      "name": "Collect",
+      "short_description": "Cozy Collect is the application that help you gather all your personal data inside Cozy.",
+      "long_description": "With Cozy Collect, you can easily:\n * Downloads documents from all your suppliers\n * Set how often Cozy will collect your bills\n * Access directly to the documents gathered by your Cozy",
+      "changes": "You haven't missed it, the Store arrived in your Cozy!\nWe took advantage of it to improve Collect:\n * Store adaptation.\n * Tile merge: when you have several accounts for a single supplier, the former are now merged under the supplier tile.\n * Improvement of some Connectors pages."
+    },
+    "sq": {
+      "name": "Collect",
+      "short_description": "Cozy Collect is the application that help you gather all your personal data inside Cozy.",
+      "long_description": "With Cozy Collect, you can easily:\n * Downloads documents from all your suppliers\n * Set how often Cozy will collect your bills\n * Access directly to the documents gathered by your Cozy",
+      "changes": "You haven't missed it, the Store arrived in your Cozy!\nWe took advantage of it to improve Collect:\n * Store adaptation.\n * Tile merge: when you have several accounts for a single supplier, the former are now merged under the supplier tile.\n * Improvement of some Connectors pages."
+    },
+    "zh_CN": {
+      "name": "Collect",
+      "short_description": "Cozy Collect is the application that help you gather all your personal data inside Cozy.",
+      "long_description": "With Cozy Collect, you can easily:\n * Downloads documents from all your suppliers\n * Set how often Cozy will collect your bills\n * Access directly to the documents gathered by your Cozy",
+      "changes": "You haven't missed it, the Store arrived in your Cozy!\nWe took advantage of it to improve Collect:\n * Store adaptation.\n * Tile merge: when you have several accounts for a single supplier, the former are now merged under the supplier tile.\n * Improvement of some Connectors pages."
+    }
+  },
+  "langs": [
+    "de",
+    "de_DE",
+    "en",
+    "es",
+    "fr",
+    "ja",
+    "nl",
+    "pl",
+    "sq",
+    "zh_CN"
+  ]
+}
