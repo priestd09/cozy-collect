@@ -1,11 +1,11 @@
 {
-  "name": "Collect",
+  "name": "Home",
   "name_prefix": "Cozy",
-  "slug": "collect",
-  "icon": "cozy_collect.svg",
+  "slug": "home",
+  "icon": "icon.svg",
   "categories": ["cozy", "konnectors"],
   "type": "webapp",
-  "source": "git://github.com/cozy/cozy-collect.git",
+  "source": "git://github.com/cozy/cozy-home.git",
   "editor": "Cozy",
   "developer": {
     "name": "Cozy Cloud",
