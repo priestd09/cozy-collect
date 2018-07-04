@@ -17,8 +17,6 @@ import ScrollToTopOnMount from './ScrollToTopOnMount'
 import AccountPicker from './AccountPicker'
 import StoreTile from './StoreTile'
 
-import styles from '../styles/services'
-
 const { BarCenter } = cozy.bar
 
 class Services extends Component {
