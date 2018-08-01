@@ -14,7 +14,7 @@
     "name": "Cozy Cloud",
     "url": "https://cozy.io"
   },
-  "version": "2.0.3",
+  "version": "2.3.0",
   "licence": "AGPL-3.0",
   "screenshots": [
     "screenshots/screenshot1.png",
@@ -129,13 +129,6 @@
       ]
     }
   ],
-  "services": {
-    "clean-orphan-accounts": {
-      "type": "node",
-      "file": "/services/cleanOrphanAccounts.js",
-      "trigger": "@cron 0 0 * * * *"
-    }
-  },
   "locales": {
     "de": {
       "name": "Collect",
@@ -157,8 +150,8 @@
     },
     "es": {
       "name": "Recopilar",
-      "short_description": "Cozy Collect is the application that help you gather all your personal data inside Cozy.",
-      "long_description": "With Cozy Collect, you can easily:\n * Downloads documents from all your suppliers\n * Set how often Cozy will collect your bills\n * Access directly to the documents gathered by your Cozy",
+      "short_description": "Cozy Collect es la aplicación que le ayuda a recopilar todos sus datos personales que están en Cozy.",
+      "long_description": "Con Cozy Collect, usted puede facilmente:\n* Descargar documentos de todos sus proveedores\n* Establecer la frecuencia con la que Cozy recopilará sus facturas\n* Acceder directoamente a los documentos recopilados por su Cozy",
       "changes": "You haven't missed it, the Store arrived in your Cozy!\nWe took advantage of it to improve Collect:\n * Store adaptation.\n * Tile merge: when you have several accounts for a single supplier, the former are now merged under the supplier tile.\n * Improvement of some Connectors pages."
     },
     "fr": {
