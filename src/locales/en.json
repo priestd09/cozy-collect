@@ -142,6 +142,9 @@
       "label": "Add an account"
     }
   },
+  "apps": {
+    "title": "My apps"
+  },
   "connection": {
     "error": {
       "default": {
